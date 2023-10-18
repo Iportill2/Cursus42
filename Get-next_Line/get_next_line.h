@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iportill <iportill@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 16:24:31 by iportill          #+#    #+#             */
-/*   Updated: 2023/03/06 16:25:51 by iportill         ###   ########.fr       */
+/*   Updated: 2023/10/18 17:57:50 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <fcntl.h>/* para ..*/
 # include <unistd.h>/* para write*/
 # include <stdlib.h>/* para malloc*/
+# include <stdio.h>/* para printf*/
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1000
