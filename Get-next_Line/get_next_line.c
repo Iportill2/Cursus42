@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iportill <iportill@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 16:24:26 by iportill          #+#    #+#             */
-/*   Updated: 2023/03/08 12:43:46 by iportill         ###   ########.fr       */
+/*   Updated: 2023/10/18 17:45:09 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <unistd.h>
-//#include <stdio.h>
-//#include <fcntl.h>
 
 char	*ft_read_to_left_str(int fd, char *left_str)
 {
