@@ -3,84 +3,117 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iportill <iportill@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 17:21:05 by iportill          #+#    #+#             */
-/*   Updated: 2022/12/12 15:16:32 by iportill         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:34:59 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_line_counter(const char *s, char c)
+static void	*ft_del(char **array, int j)
 {
-	size_t	count;
-
-	count = 0;
-	while (*s == c && *s)
-		s++;
-	while (*s)
-	{
-		while (*s && *s != c)
-			s++;
-		while (*s && *s == c)
-			s++;
-		count++;
-	}
-	return (count);
-}
-
-static char	*ft_splitdup(const char *s, size_t start, size_t finish)
-{
-	char	*dest;
-	size_t	i;
+	int	i;
 
 	i = 0;
-	dest = (char *)malloc(sizeof(char) * (finish - start + 1));
-	if (!dest)
+	while (i < j)
+		free(array[i++]);
+	free(array);
+	return (NULL);
+}
+
+static char	*ft_subsplit(char const *s, char c, int i)
+{
+	int		len;
+	char	*str;
+	int		start;
+
+	start = i;
+	len = 1;
+	while (s[i] != c && s[i] != '\0')
+	{
+		len++;
+		i++;
+	}
+	i = 0;
+	str = (char *) malloc (sizeof(char) * len);
+	if (str == NULL)
 		return (NULL);
-	while (start < finish)
-		dest[i++] = s[start++];
-	dest[i] = '\0';
-	return (dest);
+	while (s[start] != c && s[start] != '\0')
+		str[i++] = s[start++];
+	str[i] = '\0';
+	return (str);
 }
 
-static char	**ft_fill_split(char **dest, const char *s, char c)
+static int	ft_strcount(const char *s, char c)
 {
-	size_t	i;
-	size_t	p1;
-	size_t	start;
+	int	i;
+	int	snbr;
+	int	ok;
 
 	i = 0;
-	p1 = 0;
-	start = 0;
-	while (s[i])
+	snbr = 0;
+	ok = 1;
+	while (s[i] != '\0')
 	{
-		while (s[i] != c && s[i])
+		if (s[i] != c && ok == 1)
 		{
-			i++;
-			if (s[i] == c || i == ft_strlen(s))
-				dest[p1++] = ft_splitdup(s, start, i);
+			snbr++;
+			ok = 0;
 		}
-		while (s[i] == c && s[i])
-		{
-			i++;
-			start = i;
-		}
+		if (s[i] == c)
+			ok = 1;
+		i++;
 	}
-	dest[p1] = NULL;
-	return (dest);
+	return (snbr);
 }
 
-char	**ft_split(const char *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char	**dest;
+	char	**array;
+	char	*str;
+	int		i;
+	int		j;
 
 	if (!s)
+		return (0);
+	array = (char **) malloc (sizeof(char *) * ((ft_strcount(s, c)) + 1));
+	if (array == NULL)
 		return (NULL);
-	dest = (char **)malloc(sizeof(char *) * (ft_line_counter(s, c) + 1));
-	if (!dest)
-		return (NULL);
-	ft_fill_split(dest, s, c);
-	return (dest);
+	i = -1;
+	j = 0;
+	while (s[++i] != '\0')
+	{
+		if (s[i] != c)
+		{
+			str = ft_subsplit(s, c, i);
+			if (!str)
+				return (ft_del(array, j));
+			array[j++] = str;
+			i = i + ft_strlen(str) - 1;
+		}
+	}
+	array[j] = 0;
+	return (array);
 }
+
+/*int	main(void)
+{
+	//char	s[] = "-zapato-gato----julio-agosto-mosto";
+	//char	s[] = "Hleo!e";
+	char	c;
+	char	**res;
+	int		i;
+
+	i = 0;
+	c = '-';
+	//res = (char **) malloc (sizeof(char *) * 100);
+	res = ft_split(NULL, c);
+	while (res && res[i])
+	{
+		printf ("%s\n", res[i]);
+		i++;
+	}
+	return (0);
+}*/
