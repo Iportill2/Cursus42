@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iportill <iportill@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 15:37:59 by sould             #+#    #+#             */
-/*   Updated: 2023/03/08 17:17:29 by iportill         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:50:09 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "../include/libftprintf.h"
 
 int	ft_printchar(int c)
 {
@@ -62,4 +62,9 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (print_length);
+}
+int main()
+{
+	ft_printf("Hello World!\n");
+	return 0;
 }

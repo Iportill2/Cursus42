@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iportill <iportill@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 15:28:30 by sould             #+#    #+#             */
-/*   Updated: 2023/03/08 17:03:10 by iportill         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:53:27 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <unistd.h>
 # include <stdint.h>
 # include <stdlib.h>
+# include "libft.h"
+# include "ft_printf.h"
 
 int		ft_printf(const char *format, ...);
 int		ft_formats(va_list args, const char format);

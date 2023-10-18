@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iportill <iportill@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 15:37:43 by sould             #+#    #+#             */
-/*   Updated: 2023/03/08 17:17:16 by iportill         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:52:04 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-#include "libft.h"
+#include "../include/libftprintf.h"
+
 
 int	ft_ptr_len(uintptr_t num)
 {
