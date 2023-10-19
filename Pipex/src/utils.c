@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iportill <iportill@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: iportill <iportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 12:34:18 by iportill          #+#    #+#             */
-/*   Updated: 2023/10/03 17:38:03 by iportill         ###   ########.fr       */
+/*   Updated: 2023/10/19 09:18:30 by iportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@ void	correct_argc(int argc)
 
 t_pipex	*create_struc(t_pipex *p, int argc, char **argv, char **env)
 {
-	int	i;
-
-	i = 0;
 	p = ft_calloc(sizeof(t_pipex), (1));
 	p->infile = argv[1];
 	p->cmd1 = argv[2];

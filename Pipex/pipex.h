@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iportill <iportill@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:14:55 by iportill          #+#    #+#             */
-/*   Updated: 2023/10/03 16:23:07 by iportill         ###   ########.fr       */
+/*   Updated: 2023/10/18 20:01:33 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 # include <stdio.h>  //printf
 # include <stdlib.h> //malloc
 # include <unistd.h> //write
+# include <sys/types.h>
+# include <sys/wait.h>
+# include <errno.h>
+# include <string.h>
+# include <limits.h>
 # define WRITE 1
 # define READ 0
 
